@@ -25,3 +25,17 @@ button.recording:hover {
     background-color: #c00;
     color: white;
 }
+
+audio {
+    width: 100%;
+    height: 4em;
+}
+
+audio::-webkit-media-controls-enclosure {
+    border-radius: 0px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    background-size: 2em;
+}

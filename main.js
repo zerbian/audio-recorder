@@ -30,16 +30,16 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("data available after MediaRecorder.stop() called.");
 
             const clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
-            const audio = document.createElement('audio');
-            audio.setAttribute('controls', '');
+            const audio = document.createElement('audio-player');
+            audio.title = clipName;
             container.appendChild(audio);
             audio.controls = true;
 
-            const blob = new Blob(chunks, {'type': 'audio/ogg; codecs=opus'});
+            const blob = new Blob(chunks, {'type': 'audio/mp3;'});
             chunks = [];
             const audioURL = window.URL.createObjectURL(blob);
             console.log(audioURL);
-            audio.src = audioURL;
+            audio.setAttribute('src', audioURL);
         }
 
         mediaRecorder.ondataavailable = function(e) {
